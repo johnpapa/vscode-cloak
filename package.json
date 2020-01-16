@@ -1,0 +1,77 @@
+{
+  "name": "vscode-hide-secrets",
+  "displayName": "vscode-hide-secrets",
+  "description": "Hide secrets",
+  "publisher": "johnpapa",
+  "version": "0.0.1",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnpapa/vscode-peacock.git"
+  },
+  "icon": "resources/peacock-icon.png",
+  "galleryBanner": {
+    "color": "#373436",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.41.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "Theme",
+    "Colors",
+    "Fun"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "hideSecrets.hideSecrets",
+        "title": "Hide Secrets"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "hideSecrets.hideSecrets"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "package": "npx vsce package",
+    "vscode:prepublish": "webpack --mode production",
+    "webpack": "webpack --mode none",
+    "watch": "webpack --mode none --watch",
+    "pretest": "npm run compile",
+    "just-test": "node ./out/test/runTest.js",
+    "test-compile": "tsc -p ./ && npm run webpack",
+    "test": "npm run test-compile && npm run just-test"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.41.0",
+    "eslint": "^6.8.0",
+    "glob": "^7.1.5",
+    "mocha": "^6.2.2",
+    "prettier": "^1.19.1",
+    "ts-loader": "^6.2.1",
+    "tslint": "^5.20.1",
+    "typescript": "^3.6.4",
+    "vscode-test": "^1.2.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
