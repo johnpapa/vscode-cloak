@@ -32,18 +32,25 @@
     "ui",
     "workspace"
   ],
-  "main": "./out/extension.js",
+  "main": "./dist/extension",
   "contributes": {
     "commands": [
       {
         "command": "hideSecrets.hideSecrets",
         "title": "Hide Secrets"
+      },
+      {
+        "command": "hideSecrets.showSecrets",
+        "title": "Show Secrets"
       }
     ],
     "menus": {
       "commandPalette": [
         {
           "command": "hideSecrets.hideSecrets"
+        },
+        {
+          "command": "hideSecrets.showSecrets"
         }
       ]
     }

@@ -1,2 +1,367 @@
-module.exports=function(t){var e={};function n(o){if(e[o])return e[o].exports;var i=e[o]={i:o,l:!1,exports:{}};return t[o].call(i.exports,i,i.exports,n),i.l=!0,i.exports}return n.m=t,n.c=e,n.d=function(t,e,o){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:o})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var i in t)n.d(o,i,function(e){return t[e]}.bind(null,i));return o},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=4)}([function(t,e){t.exports=require("vscode")},function(t,e,n){"use strict";function o(t){for(var n in t)e.hasOwnProperty(n)||(e[n]=t[n])}Object.defineProperty(e,"__esModule",{value:!0});const i=n(0),r=n(3);o(n(3)),o(n(5)),e.getExtension=function(){let t;const e=i.extensions.getExtension(r.extensionId);if(!e)throw new Error("Extension was not found.");return e&&(t=e),t}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});const o=n(0);class i{static initialize(){this._outputChannel||(this._outputChannel=o.window.createOutputChannel("Peacock"))}static getChannel(){return this.initialize(),this._outputChannel}static info(t,e=!1,n=""){n&&this._outputChannel.appendLine(n);const o=function(t,e){const n=e?"  ":"";let o="";if("object"==typeof t)return Array.isArray(t)?o=`${n}${JSON.stringify(t,null,2)}`:Object.entries(t).map(t=>{o+=`${n}${t[0]} = ${t[1]}\n`}),o;return o=`${n}${t}`,o}(t,e);this._outputChannel.appendLine(o)}}e.Logger=i,i.initialize()},function(t,e,n){"use strict";var o=this&&this.__awaiter||function(t,e,n,o){return new(n||(n=Promise))((function(i,r){function u(t){try{s(o.next(t))}catch(t){r(t)}}function c(t){try{s(o.throw(t))}catch(t){r(t)}}function s(t){var e;t.done?i(t.value):(e=t.value,e instanceof n?e:new n((function(t){t(e)}))).then(u,c)}s((o=o.apply(t,e||[])).next())}))};Object.defineProperty(e,"__esModule",{value:!0}),e.extensionShortName="hide-secrets",e.extensionId="johnpapa.vscode-hide-secrets",e.timeout=(t=200)=>o(void 0,void 0,void 0,(function*(){return new Promise(e=>setTimeout(e,t))})),e.isObjectEmpty=t=>"object"==typeof t&&0===Object.keys(t).length},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});const o=n(0),{commands:i,workspace:r}=o,u=n(2),c=n(1),s=n(6);e.activate=function(t){u.Logger.info("Hide Secrets is initialized."),i.registerCommand(c.Commands.hideSecrets,s.hideSecretsHandler)},e.deactivate=function(){}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),function(t){t.hideSecrets="hideSecrets.hideSecrets"}(e.Commands||(e.Commands={})),function(t){t.WorkspaceColors="elementAdjustments"}(e.Settings||(e.Settings={})),function(t){t.colorCustomizationSection="workbench.colorCustomizations"}(e.Sections||(e.Sections={}))},function(t,e,n){"use strict";var o=this&&this.__awaiter||function(t,e,n,o){return new(n||(n=Promise))((function(i,r){function u(t){try{s(o.next(t))}catch(t){r(t)}}function c(t){try{s(o.throw(t))}catch(t){r(t)}}function s(t){var e;t.done?i(t.value):(e=t.value,e instanceof n?e:new n((function(t){t(e)}))).then(u,c)}s((o=o.apply(t,e||[])).next())}))};Object.defineProperty(e,"__esModule",{value:!0});const i=n(7);e.hideSecretsHandler=function(){return o(this,void 0,void 0,(function*(){yield i.updateColorConfiguration(" tbd ")}))}},function(t,e,n){"use strict";function o(t){for(var n in t)e.hasOwnProperty(n)||(e[n]=t[n])}Object.defineProperty(e,"__esModule",{value:!0}),o(n(8)),o(n(9))},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});const o=n(0),i=n(1),{workspace:r}=o;e.getColorCustomizationConfig=function(){return r.getConfiguration(i.Sections.colorCustomizationSection)}},function(t,e,n){"use strict";var o=this&&this.__awaiter||function(t,e,n,o){return new(n||(n=Promise))((function(i,r){function u(t){try{s(o.next(t))}catch(t){r(t)}}function c(t){try{s(o.throw(t))}catch(t){r(t)}}function s(t){var e;t.done?i(t.value):(e=t.value,e instanceof n?e:new n((function(t){t(e)}))).then(u,c)}s((o=o.apply(t,e||[])).next())}))};Object.defineProperty(e,"__esModule",{value:!0});const i=n(0),r=n(0),u=n(1),c=n(2);e.updateColorConfiguration=function(t){return o(this,void 0,void 0,(function*(){return c.Logger.info(`${u.extensionShortName}: Updating the workspace with the following color customizations`),c.Logger.info(t,!0),yield i.workspace.getConfiguration().update(u.Sections.colorCustomizationSection,t,r.ConfigurationTarget.Global)}))}}]);
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const vscode = __webpack_require__(1);
+const { commands, workspace } = vscode;
+const logging_1 = __webpack_require__(2);
+const models_1 = __webpack_require__(3);
+const commands_1 = __webpack_require__(6);
+function activate(context) {
+    logging_1.Logger.info('Hide Secrets is initialized.');
+    registerCommands();
+}
+exports.activate = activate;
+function registerCommands() {
+    commands.registerCommand(models_1.Commands.hideSecrets, commands_1.hideSecretsHandler);
+    commands.registerCommand(models_1.Commands.showSecrets, commands_1.showSecretsHandler);
+}
+function deactivate() { }
+exports.deactivate = deactivate;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = require("vscode");
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const vscode_1 = __webpack_require__(1);
+class Logger {
+    static initialize() {
+        if (!this._outputChannel) {
+            // Only init once
+            this._outputChannel = vscode_1.window.createOutputChannel('Peacock');
+        }
+    }
+    static getChannel() {
+        this.initialize();
+        return this._outputChannel;
+    }
+    static info(value, indent = false, title = '') {
+        if (title) {
+            this._outputChannel.appendLine(title);
+        }
+        const message = prepareMessage(value, indent);
+        this._outputChannel.appendLine(message);
+    }
+}
+exports.Logger = Logger;
+function prepareMessage(value, indent) {
+    const prefix = indent ? '  ' : '';
+    let text = '';
+    if (typeof value === 'object') {
+        if (Array.isArray(value)) {
+            text = `${prefix}${JSON.stringify(value, null, 2)}`;
+        }
+        else {
+            Object.entries(value).map(item => {
+                text += `${prefix}${item[0]} = ${item[1]}\n`;
+            });
+        }
+        return text;
+    }
+    text = `${prefix}${value}`;
+    return text;
+}
+Logger.initialize();
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+const vscode = __webpack_require__(1);
+const constants_1 = __webpack_require__(4);
+__export(__webpack_require__(4));
+__export(__webpack_require__(5));
+function getExtension() {
+    let extension;
+    const ext = vscode.extensions.getExtension(constants_1.extensionId);
+    if (!ext) {
+        throw new Error('Extension was not found.');
+    }
+    if (ext) {
+        extension = ext;
+    }
+    return extension;
+}
+exports.getExtension = getExtension;
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.extensionShortName = 'hide-secrets';
+exports.extensionId = 'johnpapa.vscode-hide-secrets';
+exports.timeout = (ms = 200) => __awaiter(void 0, void 0, void 0, function* () { return new Promise(resolve => setTimeout(resolve, ms)); });
+exports.isObjectEmpty = (o) => typeof o === 'object' && Object.keys(o).length === 0;
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Commands;
+(function (Commands) {
+    Commands["hideSecrets"] = "hideSecrets.hideSecrets";
+    Commands["showSecrets"] = "hideSecrets.showSecrets";
+})(Commands = exports.Commands || (exports.Commands = {}));
+// export enum Settings {
+//   BackgroundColor = 'background'
+// }
+var Sections;
+(function (Sections) {
+    Sections["editorTokenColorCustomizationSection"] = "editor.tokenColorCustomizations";
+})(Sections = exports.Sections || (exports.Sections = {}));
+var TextMateKeys;
+(function (TextMateKeys) {
+    TextMateKeys["envKeys"] = "string.quoted.double.env,source.env,constant.numeric.env";
+    TextMateKeys["envComments"] = "comment.line.number-sign.env";
+})(TextMateKeys = exports.TextMateKeys || (exports.TextMateKeys = {}));
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const configuration_1 = __webpack_require__(7);
+const models_1 = __webpack_require__(3);
+function hideSecretsHandler() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const value = {
+            textMateRules: [
+                {
+                    scope: models_1.TextMateKeys.envKeys,
+                    settings: {
+                        foreground: '#19354900'
+                    }
+                },
+                {
+                    scope: models_1.TextMateKeys.envComments,
+                    settings: {
+                        foreground: '#19354900'
+                    }
+                }
+            ]
+        };
+        yield configuration_1.updateColorConfiguration(value);
+    });
+}
+exports.hideSecretsHandler = hideSecretsHandler;
+function showSecretsHandler() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const value = {};
+        yield configuration_1.updateColorConfiguration(value);
+    });
+}
+exports.showSecretsHandler = showSecretsHandler;
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(8));
+__export(__webpack_require__(9));
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const vscode = __webpack_require__(1);
+const models_1 = __webpack_require__(3);
+const { workspace } = vscode;
+function getColorCustomizationConfig() {
+    return workspace.getConfiguration(models_1.Sections.editorTokenColorCustomizationSection);
+}
+exports.getColorCustomizationConfig = getColorCustomizationConfig;
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const vscode = __webpack_require__(1);
+const vscode_1 = __webpack_require__(1);
+const models_1 = __webpack_require__(3);
+const logging_1 = __webpack_require__(2);
+// export async function updateGlobalConfiguration<T>(setting: Settings, value?: any) {
+//   const config = vscode.workspace.getConfiguration();
+//   const section = `${extensionShortName}.${setting}`;
+//   Logger.info(`${extensionShortName}: Updating the user settings with the following changes:`);
+//   if (value && Array.isArray(value) && value.length > 0) {
+//     Logger.info(value, true, `${extensionShortName}:  ${section}`);
+//   } else {
+//     Logger.info(`${extensionShortName}: ${section} = ${value}`, true);
+//   }
+//   return await config.update(section, value, ConfigurationTarget.Global);
+// }
+function updateColorConfiguration(colorCustomizations) {
+    return __awaiter(this, void 0, void 0, function* () {
+        logging_1.Logger.info(`${models_1.extensionShortName}: Updating the workspace with the following color customizations`);
+        logging_1.Logger.info(colorCustomizations, true);
+        return yield vscode.workspace
+            .getConfiguration()
+            .update(models_1.Sections.editorTokenColorCustomizationSection, colorCustomizations, vscode_1.ConfigurationTarget.Global);
+    });
+}
+exports.updateColorConfiguration = updateColorConfiguration;
+
+
+/***/ })
+/******/ ]);
 //# sourceMappingURL=extension.js.map

@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { ConfigurationTarget } from 'vscode';
-import { extensionShortName, Settings, Sections } from '../models';
+import { extensionShortName, Sections } from '../models';
 import { Logger } from '../logging';
 
 // export async function updateGlobalConfiguration<T>(setting: Settings, value?: any) {
@@ -20,5 +20,5 @@ export async function updateColorConfiguration(colorCustomizations: {} | undefin
   Logger.info(colorCustomizations, true);
   return await vscode.workspace
     .getConfiguration()
-    .update(Sections.colorCustomizationSection, colorCustomizations, ConfigurationTarget.Global);
+    .update(Sections.editorTokenColorCustomizationSection, colorCustomizations, ConfigurationTarget.Global);
 }
