@@ -90,6 +90,8 @@ Then you can run the debugger for the launch configuration `Run Extension`. Set 
 
 Inspiration comes in many forms. These folks and teams have contributed either through ideas, issues, pull requests, or guidance. Thank you!
 
+- Thanks to [John Lindquist](https://twitter.com/johnlindquist) and [Wes Bos](https://twitter.com/wesbos) for the inspiration.
+
 - The VS Code team and their incredibly [helpful guide for creating extensions](https://code.visualstudio.com/api/get-started/your-first-extension?wt.mc_id=cloak-github-jopapa)
 
 - Here are some great [examples for extensions](https://github.com/Microsoft/vscode-extension-samples) from the VS Code team
