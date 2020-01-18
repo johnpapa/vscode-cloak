@@ -33,12 +33,56 @@ Let's see Cloak in action!
 
 Now enjoy exploring the rest of the features explained in the docs!
 
+## Settings
+
+| Property                  | Description                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| cloak.hideComments        | Specifies whether comments will be affected                                  |
+| cloak.environmentKeys     | Specifies the scopes for the environment keys that will be affected          |
+| cloak.environmentComments | Specifies the scopes for the environment file comments that will be affected |
+
+## Commands
+
+| Command                    | Description                                        |
+| -------------------------- | -------------------------------------------------- |
+| cloak.restoreDefaultScopes | Restore the default TextMateRules scopes           |
+| cloak.hideSecrets          | Hide the secrets                                   |
+| cloak.showSecrets          | Show the secrets                                   |
+| cloak.toggleSecrets        | Hide/Show the secrets (opposite of current effect) |
+
+### Issues
+
+Please refer to the [issues list and feel free to grab one and contribute](https://github.com/johnpapa/vscode-cloak/issues)!
+
+### Contributions
+
+### Logging
+
+Cloak writes to VS Code's log output. You can open the output panel and select "Cloak" to see the log. This can be helpful when reporting issues.
+
+## Changes
+
+See the [CHANGELOG](/changelog) latest changes.
+
+## FAQ
+
+### Does Cloak work in files other than `.env` files?
+
+Not currently. Cloak relies on the TextMateRules and scopes that VS Code supports. These currently only support known scopes, and there is no way I could find that would narrow down the contents of specific files. If this changes, or if you have ideas, please consider proposing a Pull Request.
+
+## Try the Code
+
+If you want to try the extension out start by cloning this repo, `cd` into the folder, and then run `npm install`.
+
+Then you can run the debugger for the launch configuration `Run Extension`. Set breakpoints, step through the code, and enjoy!
+
 ## Resources
 
 - [Get VS Code](https://code.visualstudio.com/?wt.mc_id=cloak-github-jopapa)
 - [Create your first VS Code extension](https://code.visualstudio.com/api/get-started/your-first-extension?wt.mc_id=cloak-github-jopapa)
 - [VS Code Extension API](https://code.visualstudio.com/api/references/vscode-api?wt.mc_id=cloak-github-jopapa)
 - [Learn how to add WebPack bundles to your favorite extensions](https://code.visualstudio.com/updates/v1_32#_bundling-extensions-with-webpack?wt.mc_id=cloak-github-jopapa)
+- [Try Azure Free](https://azure.microsoft.com/free?wt.mc_id=cloak-github-jopapa)
 
 ## Credits
 

@@ -96,6 +96,7 @@
   },
   "scripts": {
     "package": "npx vsce package",
+    "publish": "npx vsce publish",
     "vscode:prepublish": "webpack --mode production",
     "lint": "eslint ./src --ext .js,.ts",
     "lint-fix": "eslint ./src --ext .js,.ts --fix",
