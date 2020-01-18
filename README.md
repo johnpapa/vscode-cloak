@@ -1,8 +1,8 @@
 # Cloak for Visual Studio Code
 
-![Cloak Icon](./resources/peacock-icon-small.png 'Cloak')
+![Cloak Icon](./resources/cloak-small.png 'Cloak')
 
-Cloak allows you to hide/show your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.
+Cloak hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.
 
 [![Badge for version for Visual Studio Code extension johnpapa.vscode-cloak](https://vsmarketplacebadge.apphb.com/version/johnpapa.vscode-cloak.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=vscodecloak-github-jopapa)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=vscodecloak-github-jopapa)

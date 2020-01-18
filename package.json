@@ -1,7 +1,7 @@
 {
   "name": "vscode-cloak",
   "displayName": "vscode-cloak",
-  "description": "Cloak ...",
+  "description": "Cloak hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.",
   "publisher": "johnpapa",
   "version": "0.0.1",
   "license": "SEE LICENSE IN LICENSE.md",
@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/johnpapa/vscode-peacock.git"
   },
-  "icon": "resources/peacock-icon.png",
+  "icon": "resources/peacock.png",
   "galleryBanner": {
     "color": "#373436",
     "theme": "dark"
