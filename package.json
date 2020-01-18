@@ -7,9 +7,9 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/johnpapa/vscode-peacock.git"
+    "url": "https://github.com/johnpapa/vscode-cloak.git"
   },
-  "icon": "resources/peacock.png",
+  "icon": "resources/cloak.png",
   "galleryBanner": {
     "color": "#373436",
     "theme": "dark"
