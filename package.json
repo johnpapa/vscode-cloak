@@ -42,6 +42,30 @@
       {
         "command": "hideSecrets.showSecrets",
         "title": "Show Secrets"
+      },
+      {
+        "command": "hideSecrets.toggleSecrets",
+        "title": "Toggle Secrets"
+      }
+    ],
+    "configuration": {
+      "properties": {
+        "hideSecrets.environmentKeys": {
+          "type": "string",
+          "default": "string.quoted.double.env,source.env,constant.numeric.env",
+          "description": "Specifies the scopes for the environment keys that will be affected"
+        },
+        "hideSecrets.environmentComments": {
+          "type": "string",
+          "default": "comment.line.number-sign.env",
+          "description": "Specifies the scopes for the environment file comments that will be affected"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "key": "shift+cmd+/",
+        "command": "hideSecrets.toggleSecrets"
       }
     ],
     "menus": {
@@ -51,6 +75,9 @@
         },
         {
           "command": "hideSecrets.showSecrets"
+        },
+        {
+          "command": "hideSecrets.toggleSecrets"
         }
       ]
     }
