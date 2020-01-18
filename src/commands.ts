@@ -7,7 +7,7 @@ import {
   getTextMateRules,
   updateEnvironmentKeys,
   updateEnvironmentComments,
-  getHideComments
+  getHideComments,
 } from './configuration';
 import { TextMateRulesNames, TextMateScopeDefaults } from './models';
 
@@ -44,7 +44,7 @@ export async function hideSecretsHandler() {
   const hideComments = getHideComments();
 
   // remove existing rules for the cloak scopes
-  let newRules = existingRules.filter(el => {
+  const newRules = existingRules.filter(el => {
     return ![TextMateRulesNames.envKeys, TextMateRulesNames.envComments].includes(el.name);
   });
 
@@ -53,8 +53,8 @@ export async function hideSecretsHandler() {
     name: TextMateRulesNames.envKeys,
     scope: envKeys,
     settings: {
-      foreground: '#19354900'
-    }
+      foreground: '#19354900',
+    },
   });
 
   if (hideComments) {
@@ -63,15 +63,15 @@ export async function hideSecretsHandler() {
       name: TextMateRulesNames.envComments,
       scope: envComments,
       settings: {
-        foreground: '#19354900'
-      }
+        foreground: '#19354900',
+      },
     });
   }
 
   const mergedTextMateRules: any = [...existingRules, ...newRules];
 
   const value = {
-    textMateRules: mergedTextMateRules
+    textMateRules: mergedTextMateRules,
   };
 
   await updateEditorTokenColorCustomization(value);
@@ -88,7 +88,7 @@ export async function showSecretsHandler() {
   }
 
   const value = {
-    textMateRules: newRules
+    textMateRules: newRules,
   };
 
   await updateEditorTokenColorCustomization(value);
