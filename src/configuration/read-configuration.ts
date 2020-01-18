@@ -21,6 +21,10 @@ export function getEnvironmentComments() {
   return readConfiguration<string>(Settings.EnvironmentComments, '');
 }
 
+export function getHideComments() {
+  return readConfiguration<boolean>(Settings.HideComments, false);
+}
+
 export function readConfiguration<T>(setting: Settings, defaultValue?: T | undefined) {
   const value: T | undefined = workspace
     .getConfiguration(Sections.cloakSection)

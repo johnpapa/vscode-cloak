@@ -54,6 +54,11 @@
     ],
     "configuration": {
       "properties": {
+        "cloak.hideComments": {
+          "type": "boolean",
+          "default": false,
+          "description": "Specifies whether comments will be affected"
+        },
         "cloak.environmentKeys": {
           "type": "string",
           "default": "string.quoted.double.env,source.env,constant.numeric.env",

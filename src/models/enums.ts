@@ -6,6 +6,7 @@ export enum Commands {
 }
 
 export enum Settings {
+  HideComments = 'hideComments',
   EnvironmentKeys = 'environmentKeys',
   EnvironmentComments = 'environmentComments'
 }
