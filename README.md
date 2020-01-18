@@ -33,6 +33,8 @@ Let's see Cloak in action!
 
 Now enjoy exploring the rest of the features explained in the docs!
 
+![Toggling the Secrets to show/hide with Cloak](./resources/cloak-toggle.gif)
+
 ## Settings
 
 | Property                  | Description                                                                  |
