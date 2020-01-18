@@ -1,7 +1,8 @@
 export enum Commands {
-  hideSecrets = 'hideSecrets.hideSecrets',
-  showSecrets = 'hideSecrets.showSecrets',
-  toggleSecrets = 'hideSecrets.toggleSecrets'
+  hideSecrets = 'cloak.hideSecrets',
+  showSecrets = 'cloak.showSecrets',
+  toggleSecrets = 'cloak.toggleSecrets',
+  restoreDefaultScopes = 'cloak.restoreDefaultScopes'
 }
 
 export enum Settings {
@@ -10,7 +11,7 @@ export enum Settings {
 }
 
 export enum Sections {
-  hideSecretsSection = 'hideSecrets',
+  cloakSection = 'cloak',
   editorTokenColorCustomizationSection = 'editor.tokenColorCustomizations'
 }
 
@@ -19,7 +20,7 @@ export enum TextMateRulesNames {
   envComments = 'envComments'
 }
 
-// export enum TextMateScopes {
-//   envKeys = 'string.quoted.double.env,source.env,constant.numeric.env',
-//   envComments = 'comment.line.number-sign.env'
-// }
+export enum TextMateScopeDefaults {
+  envKeys = 'string.quoted.double.env,source.env,constant.numeric.env',
+  envComments = 'comment.line.number-sign.env'
+}

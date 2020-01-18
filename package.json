@@ -1,7 +1,7 @@
 {
-  "name": "vscode-hide-secrets",
-  "displayName": "vscode-hide-secrets",
-  "description": "Hide secrets",
+  "name": "vscode-cloak",
+  "displayName": "vscode-cloak",
+  "description": "Cloak ...",
   "publisher": "johnpapa",
   "version": "0.0.1",
   "license": "SEE LICENSE IN LICENSE.md",
@@ -36,26 +36,30 @@
   "contributes": {
     "commands": [
       {
-        "command": "hideSecrets.hideSecrets",
-        "title": "Hide Secrets"
+        "command": "cloak.restoreDefaultScopes",
+        "title": "Cloak: Restore Default Scopes"
       },
       {
-        "command": "hideSecrets.showSecrets",
-        "title": "Show Secrets"
+        "command": "cloak.hideSecrets",
+        "title": "Cloak: Hide Secrets"
       },
       {
-        "command": "hideSecrets.toggleSecrets",
-        "title": "Toggle Secrets"
+        "command": "cloak.showSecrets",
+        "title": "Cloak: Show Secrets"
+      },
+      {
+        "command": "cloak.toggleSecrets",
+        "title": "Cloak: Toggle Secrets"
       }
     ],
     "configuration": {
       "properties": {
-        "hideSecrets.environmentKeys": {
+        "cloak.environmentKeys": {
           "type": "string",
           "default": "string.quoted.double.env,source.env,constant.numeric.env",
           "description": "Specifies the scopes for the environment keys that will be affected"
         },
-        "hideSecrets.environmentComments": {
+        "cloak.environmentComments": {
           "type": "string",
           "default": "comment.line.number-sign.env",
           "description": "Specifies the scopes for the environment file comments that will be affected"
@@ -65,19 +69,22 @@
     "keybindings": [
       {
         "key": "shift+cmd+/",
-        "command": "hideSecrets.toggleSecrets"
+        "command": "cloak.toggleSecrets"
       }
     ],
     "menus": {
       "commandPalette": [
         {
-          "command": "hideSecrets.hideSecrets"
+          "command": "cloak.restoreDefaultScopes"
         },
         {
-          "command": "hideSecrets.showSecrets"
+          "command": "cloak.hideSecrets"
         },
         {
-          "command": "hideSecrets.toggleSecrets"
+          "command": "cloak.showSecrets"
+        },
+        {
+          "command": "cloak.toggleSecrets"
         }
       ]
     }

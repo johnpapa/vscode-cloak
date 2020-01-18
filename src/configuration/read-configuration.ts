@@ -23,7 +23,7 @@ export function getEnvironmentComments() {
 
 export function readConfiguration<T>(setting: Settings, defaultValue?: T | undefined) {
   const value: T | undefined = workspace
-    .getConfiguration(Sections.hideSecretsSection)
+    .getConfiguration(Sections.cloakSection)
     .get<T | undefined>(setting, defaultValue);
   return value as T;
 }

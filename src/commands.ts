@@ -1,12 +1,19 @@
 import * as vscode from 'vscode';
 import {
-  updateColorConfiguration,
+  updateEditorTokenColorCustomization,
   getColorCustomizationConfig,
   getEnvironmentKeys,
   getEnvironmentComments,
-  getTextMateRules
+  getTextMateRules,
+  updateEnvironmentKeys,
+  updateEnvironmentComments
 } from './configuration';
-import { TextMateRulesNames } from './models';
+import { TextMateRulesNames, TextMateScopeDefaults } from './models';
+
+export async function restoreDefaultScopesHandler() {
+  await updateEnvironmentKeys(TextMateScopeDefaults.envKeys);
+  await updateEnvironmentComments(TextMateScopeDefaults.envComments);
+}
 
 export async function toggleSecretsHandler() {
   if (secretsAreHidden()) {
@@ -56,7 +63,7 @@ export async function hideSecretsHandler() {
     textMateRules: mergedTextMateRules
   };
 
-  await updateColorConfiguration(value);
+  await updateEditorTokenColorCustomization(value);
 }
 
 export async function showSecretsHandler() {
@@ -73,5 +80,5 @@ export async function showSecretsHandler() {
     textMateRules: newRules
   };
 
-  await updateColorConfiguration(value);
+  await updateEditorTokenColorCustomization(value);
 }

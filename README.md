@@ -1,4 +1,4 @@
-# vscode-hide-secrets README
+# vscode-cloak README
 
 todo
 
