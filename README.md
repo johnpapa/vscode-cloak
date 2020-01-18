@@ -8,7 +8,6 @@ Cloak hides/shows your secrets in environment files, to avoid accidentally shari
 [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
 [![Rating](https://vsmarketplacebadge.apphb.com/rating/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
-[![Live Share](https://img.shields.io/badge/Live_Share-enabled-8F80CF.svg?color=blue&style=flat-square&logo=visual-studio-code)](https://visualstudio.microsoft.com/services/live-share/?wt.mc_id=cloak-github-jopapa)
 
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
 [![All Contributors](https://img.shields.io/badge/all_contributors-15-blue.svg?style=flat-square)](#contributors)

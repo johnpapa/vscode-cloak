@@ -1,6 +1,6 @@
 {
   "name": "vscode-cloak",
-  "displayName": "vscode-cloak",
+  "displayName": "Cloak",
   "description": "Cloak hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.",
   "publisher": "johnpapa",
   "version": "0.0.1",
