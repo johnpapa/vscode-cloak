@@ -3,7 +3,7 @@
   "displayName": "Cloak",
   "description": "Cloak hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.",
   "publisher": "johnpapa",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
