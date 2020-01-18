@@ -3,6 +3,7 @@ import { extensionId } from './constants';
 
 export * from './constants';
 export * from './enums';
+export * from './interfaces';
 
 export function getExtension() {
   let extension: vscode.Extension<any> | undefined;

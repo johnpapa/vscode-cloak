@@ -101,7 +101,7 @@
     "lint-fix": "eslint ./src --ext .js,.ts --fix",
     "webpack": "webpack --mode none",
     "watch": "webpack --mode none --watch",
-    "pretest": "npm run compile",
+    "xpretest": "npm run compile",
     "just-test": "node ./out/test/runTest.js",
     "test-compile": "tsc -p ./ && npm run webpack",
     "test": "npm run test-compile && npm run just-test"

@@ -16,11 +16,17 @@ export async function updateGlobalConfiguration<T>(setting: Settings, value?: an
 }
 
 export async function updateEditorTokenColorCustomization(colorCustomizations: {} | undefined) {
-  Logger.info(`${extensionShortName}: Updating the settings with the following editor token color customizations`);
+  Logger.info(
+    `${extensionShortName}: Updating the settings with the following editor token color customizations`,
+  );
   Logger.info(colorCustomizations, true);
   return await vscode.workspace
     .getConfiguration()
-    .update(Sections.editorTokenColorCustomizationSection, colorCustomizations, ConfigurationTarget.Global);
+    .update(
+      Sections.editorTokenColorCustomizationSection,
+      colorCustomizations,
+      ConfigurationTarget.Global,
+    );
 }
 
 export async function updateEnvironmentKeys(envKeys: string) {
@@ -29,4 +35,8 @@ export async function updateEnvironmentKeys(envKeys: string) {
 
 export async function updateEnvironmentComments(envComments: string) {
   return await updateGlobalConfiguration<string>(Settings.EnvironmentComments, envComments);
+}
+
+export async function updateHideComments(hide: boolean) {
+  return await updateGlobalConfiguration<boolean>(Settings.HideComments, hide);
 }
