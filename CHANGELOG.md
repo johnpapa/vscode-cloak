@@ -2,7 +2,7 @@
 
 All notable changes to the "vscode-cloak" extension will be documented in this file.
 
-## 0.1.0
+## 0.2.0
 
 - Default settings now hide no quotes, double quoted, and single quoted values in the \*.env files
 - Added more details to the _readme.md_
