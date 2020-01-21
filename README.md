@@ -62,7 +62,21 @@ Now enjoy exploring the rest of the features explained in the docs!
 
 Please refer to the [issues list and feel free to grab one and contribute](https://github.com/johnpapa/vscode-cloak/issues)!
 
-### Contributions
+### How it Works
+
+here are the really important aspects of Cloak:
+
+- Cloak does not modify your files
+- Cloak does not store any information about your secrets
+- Cloak does change the foreground color to an alpha color of 00, which makes the secret transparent and hidden
+
+Cloak uses TextMateRules scopes to match syntax found in the VS Code editor. When it finds a match, these values can be hidden or shown.
+
+Only TextMateRule scopes apply. This means that if those scopes do not exist for a specific key or secret you want to hide, it cannot be done with cloak. You can determine if the scope you are looking for will work by using the _Developer: Inspect Editor Tokens and Scope_ command from the command palette, then selecting the key and seeing the scope.
+
+![Inspect Scopes](./resources/inspect-scopes.png)
+
+If you want to add or modify the scopes that apply to your secrets, you may change them in the _settings.json_ for VS Code. Find the setting for `cloak.environmentKeys` and modify as needed. If you ever need to revert to the defaults, choose the command `Cloak: Restore default scopes`.
 
 ### Logging
 
