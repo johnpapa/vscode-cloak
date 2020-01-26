@@ -128,7 +128,7 @@
     "istanbul-lib-report": "^3.0.0",
     "istanbul-lib-source-maps": "^4.0.0",
     "istanbul-reports": "^3.0.0",
-    "mocha": "^6.2.2",
+    "mocha": "^7.0.1",
     "mocha-multi-reporters": "^1.1.7",
     "prettier": "^1.19.1",
     "sinon": "^8.1.0",
