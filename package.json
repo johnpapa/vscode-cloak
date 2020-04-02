@@ -61,13 +61,13 @@
         },
         "cloak.environmentKeys": {
           "type": "string",
-          "default": "string.quoted.double.env,source.env,constant.numeric.env",
-          "description": "Specifies the scopes for the environment keys that will be affected"
+          "default": "string.quoted.double.env,constant.numeric.env,source.env,string.quoted.double.json,constant.numeric.json",
+          "description": "Specifies the scopes for the secret keys that will be affected"
         },
         "cloak.environmentComments": {
           "type": "string",
           "default": "comment.line.number-sign.env",
-          "description": "Specifies the scopes for the environment file comments that will be affected"
+          "description": "Specifies the scopes for the secrets keys that will be affected inside a comment"
         }
       }
     },
