@@ -23,7 +23,7 @@ export enum TextMateRulesNames {
 }
 
 export enum TextMateScopeDefaults {
-  envKeys = 
+  envKeys =
     `string.quoted.double`+
     `string.quoted.single`+
     `constant.numeric`,

@@ -68,6 +68,14 @@
           "type": "string",
           "default": "comment.line.number-sign.env",
           "description": "Specifies the scopes for the secrets keys that will be affected inside a comment"
+        },
+        "cloak.files": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "description": "Identify the files you wish to cloak"
         }
       }
     },
