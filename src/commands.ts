@@ -21,23 +21,21 @@ export async function restoreDefaultScopesHandler() {
 
 export async function toggleSecretsHandler() {
   const applyRegExp = (fileRegExp: string) => fileName && new RegExp(fileRegExp).test(fileName);
-  const fileGlobs = readConfiguration<string[]>(Settings.Files);
+  const filesToCloak = readConfiguration<string[]>(Settings.Files);
   const filePath = vscode.window.activeTextEditor?.document.uri.fsPath;
   const fileName = filePath?.split(sep).pop();
   let canProcessCurrentFile = true;
 
-  Logger.info({ fileGlobs, fileName });
+  Logger.info({ filesToCloak, fileName });
 
   try {
-    if (Array.isArray(fileGlobs) && fileGlobs.length) {
-      canProcessCurrentFile = !!fileGlobs.find(applyRegExp)?.length;
-    } else if (typeof fileGlobs === 'string') {
-      canProcessCurrentFile = !!applyRegExp(fileGlobs);
-    } else if (typeof fileGlobs === 'undefined') {
-      canProcessCurrentFile = true;
+    if (Array.isArray(filesToCloak) && filesToCloak.length) {
+      canProcessCurrentFile = !!filesToCloak.find(applyRegExp)?.length;
+    } else if (typeof filesToCloak === 'undefined') {
+      canProcessCurrentFile = false;
     } else {
       Logger.info(
-        `Configuration "${Sections.cloakSection}.${Settings.Files}" should be either a glob or an array of globs.`,
+        `Configuration "${Sections.cloakSection}.${Settings.Files}" should be array of files.`,
       );
     }
   } catch (error) {
