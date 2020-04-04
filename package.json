@@ -61,7 +61,7 @@
         },
         "cloak.environmentKeys": {
           "type": "string",
-          "default": "string.quoted.double.env,constant.numeric.env,source.env,string.quoted.double.json,constant.numeric.json",
+          "default": "string.quoted.double,string.quoted.single,constant.numeric",
           "description": "Specifies the scopes for the secret keys that will be affected"
         },
         "cloak.environmentComments": {
@@ -138,5 +138,6 @@
     "vscode-test": "^1.2.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
-  }
+  },
+  "dependencies": {}
 }

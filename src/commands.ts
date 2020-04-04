@@ -1,15 +1,18 @@
+import { sep } from 'path';
 import * as vscode from 'vscode';
 import {
-  updateEditorTokenColorCustomization,
   getColorCustomizationConfig,
-  getEnvironmentKeys,
   getEnvironmentComments,
-  getTextMateRules,
-  updateEnvironmentKeys,
-  updateEnvironmentComments,
+  getEnvironmentKeys,
   getHideComments,
+  getTextMateRules,
+  readConfiguration,
+  updateEditorTokenColorCustomization,
+  updateEnvironmentComments,
+  updateEnvironmentKeys,
 } from './configuration';
-import { TextMateRulesNames, TextMateScopeDefaults } from './models';
+import { Logger } from './logging';
+import { Sections, Settings, TextMateRulesNames, TextMateScopeDefaults } from './models';
 
 export async function restoreDefaultScopesHandler() {
   await updateEnvironmentKeys(TextMateScopeDefaults.envKeys);
@@ -17,10 +20,41 @@ export async function restoreDefaultScopesHandler() {
 }
 
 export async function toggleSecretsHandler() {
-  if (secretsAreHidden()) {
-    await showSecretsHandler();
+  const applyRegExp = (fileRegExp: string) => fileName && new RegExp(fileRegExp).test(fileName);
+  const fileGlobs = readConfiguration<string[]>(Settings.Files);
+  const filePath = vscode.window.activeTextEditor?.document.uri.fsPath;
+  const fileName = filePath?.split(sep).pop();
+  let canProcessCurrentFile = true;
+
+  Logger.info({ fileGlobs, fileName });
+
+  try {
+    if (Array.isArray(fileGlobs) && fileGlobs.length) {
+      canProcessCurrentFile = !!fileGlobs.find(applyRegExp)?.length;
+    } else if (typeof fileGlobs === 'string') {
+      canProcessCurrentFile = !!applyRegExp(fileGlobs);
+    } else if (typeof fileGlobs === 'undefined') {
+      canProcessCurrentFile = true;
+    } else {
+      Logger.info(
+        `Configuration "${Sections.cloakSection}.${Settings.Files}" should be either a glob or an array of globs.`,
+      );
+    }
+  } catch (error) {
+    Logger.info(error.toString());
+    return;
+  }
+
+  if (canProcessCurrentFile) {
+    if (secretsAreHidden()) {
+      await showSecretsHandler();
+    } else {
+      await hideSecretsHandler();
+    }
   } else {
-    await hideSecretsHandler();
+    Logger.info(
+      `Current file does not match the provided configuration in "${Sections.cloakSection}.${Settings.Files}".`,
+    );
   }
 }
 

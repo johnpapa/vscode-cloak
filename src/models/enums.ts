@@ -8,7 +8,8 @@ export enum Commands {
 export enum Settings {
   HideComments = 'hideComments',
   EnvironmentKeys = 'environmentKeys',
-  EnvironmentComments = 'environmentComments'
+  EnvironmentComments = 'environmentComments',
+  Files = 'files'
 }
 
 export enum Sections {
@@ -23,11 +24,8 @@ export enum TextMateRulesNames {
 
 export enum TextMateScopeDefaults {
   envKeys = 
-    `string.quoted.double.env,`+
-    `string.quoted.single.env,`+
-    `constant.numeric.env,`+
-    `source.env`+
-    `string.quoted.double.json,`+
-    `constant.numeric.json`,
+    `string.quoted.double`+
+    `string.quoted.single`+
+    `constant.numeric`,
   envComments = 'comment.line.number-sign.env',
 }
