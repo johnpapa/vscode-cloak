@@ -10,6 +10,7 @@
     "typescript.tsc.autoDetect": "off",
     "workbench.colorCustomizations": {
         "activityBar.background": "#232323",
+        "activityBar.activeBackground": "#232323",
         "activityBar.activeBorder": "#606020",
         "activityBar.foreground": "#e7e7e7",
         "activityBar.inactiveForeground": "#e7e7e799",
@@ -24,8 +25,7 @@
         "statusBar.foreground": "#e7e7e7",
         "panel.border": "#232323",
         "sideBar.border": "#232323",
-        "editorGroup.border": "#232323",
-        "tab.activeBorder": "#232323"
+        "editorGroup.border": "#232323"
     },
     "peacock.color": "#0a0a0a"
 }

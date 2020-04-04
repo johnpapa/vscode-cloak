@@ -1,15 +1,18 @@
+import { sep } from 'path';
 import * as vscode from 'vscode';
 import {
-  updateEditorTokenColorCustomization,
   getColorCustomizationConfig,
-  getEnvironmentKeys,
   getEnvironmentComments,
-  getTextMateRules,
-  updateEnvironmentKeys,
-  updateEnvironmentComments,
+  getEnvironmentKeys,
   getHideComments,
+  getTextMateRules,
+  readConfiguration,
+  updateEditorTokenColorCustomization,
+  updateEnvironmentComments,
+  updateEnvironmentKeys,
 } from './configuration';
-import { TextMateRulesNames, TextMateScopeDefaults } from './models';
+import { Logger } from './logging';
+import { Sections, Settings, TextMateRulesNames, TextMateScopeDefaults } from './models';
 
 export async function restoreDefaultScopesHandler() {
   await updateEnvironmentKeys(TextMateScopeDefaults.envKeys);
@@ -17,10 +20,39 @@ export async function restoreDefaultScopesHandler() {
 }
 
 export async function toggleSecretsHandler() {
-  if (secretsAreHidden()) {
-    await showSecretsHandler();
+  const applyRegExp = (fileRegExp: string) => fileName && new RegExp(fileRegExp).test(fileName);
+  const filesToCloak = readConfiguration<string[]>(Settings.Files);
+  const filePath = vscode.window.activeTextEditor?.document.uri.fsPath;
+  const fileName = filePath?.split(sep).pop();
+  let canProcessCurrentFile = true;
+
+  Logger.info({ filesToCloak, fileName });
+
+  try {
+    if (Array.isArray(filesToCloak) && filesToCloak.length) {
+      canProcessCurrentFile = !!filesToCloak.find(applyRegExp)?.length;
+    } else if (typeof filesToCloak === 'undefined') {
+      canProcessCurrentFile = false;
+    } else {
+      Logger.info(
+        `Configuration "${Sections.cloakSection}.${Settings.Files}" should be array of files.`,
+      );
+    }
+  } catch (error) {
+    Logger.info(error.toString());
+    return;
+  }
+
+  if (canProcessCurrentFile) {
+    if (secretsAreHidden()) {
+      await showSecretsHandler();
+    } else {
+      await hideSecretsHandler();
+    }
   } else {
-    await hideSecretsHandler();
+    Logger.info(
+      `Current file does not match the provided configuration in "${Sections.cloakSection}.${Settings.Files}".`,
+    );
   }
 }
 

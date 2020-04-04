@@ -14,4 +14,5 @@ export interface ISettings {
   hideComments: boolean;
   environmentKeys: string;
   environmentComments: string;
+  files: string[]
 }
