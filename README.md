@@ -28,6 +28,10 @@ Cloak can be useful if you:
 1. Click **Install**
 1. Click **Reload**, if required
 
+### Dependencies
+
+This extension requires the [DotENV extension](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) to be installed and enabled.
+
 ## Quick Usage
 
 Let's see Cloak in action!
