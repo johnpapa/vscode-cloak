@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-cloak" extension will be documented in this file.
 
+## 0.3.0
+
+- dotEnv extension is now a dependency of cloak
+
 ## 0.2.0
 
 - Default settings now hide no quotes, double quoted, and single quoted values in the \*.env files

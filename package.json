@@ -3,7 +3,7 @@
   "displayName": "Cloak",
   "description": "Cloak hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.",
   "publisher": "johnpapa",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
@@ -128,7 +128,7 @@
     "istanbul-lib-report": "^3.0.0",
     "istanbul-lib-source-maps": "^4.0.0",
     "istanbul-reports": "^3.0.0",
-    "mocha": "^6.2.2",
+    "mocha": "^7.1.2",
     "mocha-multi-reporters": "^1.1.7",
     "prettier": "^1.19.1",
     "sinon": "^8.1.0",
@@ -138,5 +138,8 @@
     "vscode-test": "^1.2.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
-  }
+  },
+  "extensionDependencies": [
+    "mikestead.dotenv"
+  ]
 }

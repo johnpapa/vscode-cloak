@@ -25,7 +25,9 @@
         "panel.border": "#232323",
         "sideBar.border": "#232323",
         "editorGroup.border": "#232323",
-        "tab.activeBorder": "#232323"
+        "activityBar.activeBackground": "#232323",
+        "statusBar.border": "#0a0a0a",
+        "titleBar.border": "#0a0a0a"
     },
     "peacock.color": "#0a0a0a"
 }
