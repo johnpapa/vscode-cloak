@@ -18,7 +18,7 @@ Cloak can be useful if you:
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
 [![All Contributors](https://img.shields.io/badge/all_contributors-15-blue.svg?style=flat-square)](#contributors)
 
-[![Build Status](https://johnpapa.visualstudio.com/vscode-cloak/_apis/build/status/VS%20Code%Cloak%20Extension?branchName=master)](https://johnpapa.visualstudio.com/vscode-cloak/_build/latest?definitionId=3&branchName=master)
+[![Build Status](https://johnpapa.visualstudio.com/vscode-cloak/_apis/build/status/VS%20Code%Cloak%20Extension?branchName=master)](https://johnpapa.visualstudio.com/vscode-cloak/_build/latest?definitionId=3&branchName=master&WT.mc_id=vscodecloak-github-jopapa)
 [![Greenkeeper badge](https://badges.greenkeeper.io/johnpapa/vscode-cloak.svg)](https://greenkeeper.io/)
 
 ## Install
