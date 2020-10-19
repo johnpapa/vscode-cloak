@@ -8,7 +8,7 @@ Cloak can be useful if you:
 
 - present on stage
 - stream on Twitch or YouTube
-- record screancasts of your code
+- record screencasts of your code
 
 [![Badge for version for Visual Studio Code extension johnpapa.vscode-cloak](https://vsmarketplacebadge.apphb.com/version/johnpapa.vscode-cloak.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
