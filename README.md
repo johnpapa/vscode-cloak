@@ -8,17 +8,17 @@ Cloak can be useful if you:
 
 - present on stage
 - stream on Twitch or YouTube
-- record screancasts of your code
+- record screencasts of your code
 
-[![Badge for version for Visual Studio Code extension johnpapa.vscode-cloak](https://vsmarketplacebadge.apphb.com/version/johnpapa.vscode-cloak.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs-short/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
-[![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
-[![Rating](https://vsmarketplacebadge.apphb.com/rating/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
+[![Badge for version for Visual Studio Code extension johnpapa.vscode-cloak](https://vsmarketplacebadge.apphb.com/version/johnpapa.vscode-cloak.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&WT.mc_id=javascript-0000-jopapa)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs-short/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&WT.mc_id=javascript-0000-jopapa)
+[![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&WT.mc_id=javascript-0000-jopapa)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&WT.mc_id=javascript-0000-jopapa)
 
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
 [![All Contributors](https://img.shields.io/badge/all_contributors-15-blue.svg?style=flat-square)](#contributors)
 
-[![Build Status](https://johnpapa.visualstudio.com/vscode-cloak/_apis/build/status/VS%20Code%Cloak%20Extension?branchName=master)](https://johnpapa.visualstudio.com/vscode-cloak/_build/latest?definitionId=3&branchName=master)
+[![Build Status](https://johnpapa.visualstudio.com/vscode-cloak/_apis/build/status/VS%20Code%Cloak%20Extension?branchName=master)](https://johnpapa.visualstudio.com/vscode-cloak/_build/latest?definitionId=3&branchName=master&WT.mc_id=vscodecloak-github-jopapa)
 [![Greenkeeper badge](https://badges.greenkeeper.io/johnpapa/vscode-cloak.svg)](https://greenkeeper.io/)
 
 ## Install
@@ -100,11 +100,11 @@ Then you can run the debugger for the launch configuration `Run Extension`. Set 
 
 ## Resources
 
-- [Get VS Code](https://code.visualstudio.com/?wt.mc_id=cloak-github-jopapa)
-- [Create your first VS Code extension](https://code.visualstudio.com/api/get-started/your-first-extension?wt.mc_id=cloak-github-jopapa)
-- [VS Code Extension API](https://code.visualstudio.com/api/references/vscode-api?wt.mc_id=cloak-github-jopapa)
-- [Learn how to add WebPack bundles to your favorite extensions](https://code.visualstudio.com/updates/v1_32#_bundling-extensions-with-webpack?wt.mc_id=cloak-github-jopapa)
-- [Try Azure Free](https://azure.microsoft.com/free?wt.mc_id=cloak-github-jopapa)
+- [Get VS Code](https://code.visualstudio.com/?WT.mc_id=javascript-0000-jopapa)
+- [Create your first VS Code extension](https://code.visualstudio.com/api/get-started/your-first-extension?WT.mc_id=javascript-0000-jopapa)
+- [VS Code Extension API](https://code.visualstudio.com/api/references/vscode-api?WT.mc_id=javascript-0000-jopapa)
+- [Learn how to add WebPack bundles to your favorite extensions](https://code.visualstudio.com/updates/v1_32?WT.mc_id=javascript-0000-jopapa#_bundling-extensions-with-webpack?wt.mc_id=cloak-github-jopapa)
+- [Try Azure Free](https://azure.microsoft.com/free?WT.mc_id=javascript-0000-jopapa)
 
 ## Credits
 
@@ -112,7 +112,7 @@ Inspiration comes in many forms. These folks and teams have contributed either t
 
 - Thanks to [John Lindquist](https://twitter.com/johnlindquist) and [Wes Bos](https://twitter.com/wesbos) for the inspiration.
 
-- The VS Code team and their incredibly [helpful guide for creating extensions](https://code.visualstudio.com/api/get-started/your-first-extension?wt.mc_id=cloak-github-jopapa)
+- The VS Code team and their incredibly [helpful guide for creating extensions](https://code.visualstudio.com/api/get-started/your-first-extension?WT.mc_id=javascript-0000-jopapa)
 
 - Here are some great [examples for extensions](https://github.com/Microsoft/vscode-extension-samples) from the VS Code team
 
