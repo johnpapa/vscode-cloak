@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-cloak" extension will be documented in this file.
 
+## 0.4.0
+
+- Added new scope for ini files. Fixes change to VS Code scopes where cloak was not hpackiding secrets.
+
 ## 0.3.0
 
 - dotEnv extension is now a dependency of cloak
