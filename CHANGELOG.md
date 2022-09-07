@@ -2,9 +2,9 @@
 
 All notable changes to the "vscode-cloak" extension will be documented in this file.
 
-## 0.4.0
+## 0.4.1
 
-- Added new scope for ini files. Fixes change to VS Code scopes where cloak was not hpackiding secrets.
+- Added new scope for ini files. Fixes change to VS Code scopes where cloak was not hiding secrets.
 
 ## 0.3.0
 
