@@ -8,11 +8,13 @@ import {
   toggleSecretsHandler,
   restoreDefaultScopesHandler,
 } from './commands';
+import { updateStatusBar } from './statusbar';
 
 export function activate(context: vscode.ExtensionContext) {
   Logger.info('Cloak is initialized.');
 
   registerCommands();
+  updateStatusBar();
 }
 
 function registerCommands() {

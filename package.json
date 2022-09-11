@@ -3,7 +3,7 @@
   "displayName": "Cloak",
   "description": "Cloak hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.",
   "publisher": "johnpapa",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
@@ -61,12 +61,12 @@
         },
         "cloak.environmentKeys": {
           "type": "string",
-          "default": "string.quoted.double.ini,source.ini,constant.numeric.ini,string.quoted.double.env,source.env,constant.numeric.env",
+          "default": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
           "description": "Specifies the scopes for the environment keys that will be affected"
         },
         "cloak.environmentComments": {
           "type": "string",
-          "default": "comment.line.number-sign.ini,comment.line.number-sign.env",
+          "default": "comment.line.number-sign.ini",
           "description": "Specifies the scopes for the environment file comments that will be affected"
         }
       }

@@ -24,9 +24,6 @@
         "statusBar.foreground": "#e7e7e7",
         "activityBar.activeBackground": "#0a0a0a",
         "commandCenter.border": "#e7e7e799",
-        "editorError.foreground": "#000000ff",
-        "editorInfo.foreground": "#000000ff",
-        "editorWarning.foreground": "#000000ff",
         "sash.hoverBorder": "#0a0a0a",
         "statusBarItem.remoteBackground": "#0a0a0a",
         "statusBarItem.remoteForeground": "#e7e7e7"
