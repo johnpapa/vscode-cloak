@@ -1,5 +1,7 @@
 # Cloak for Visual Studio Code
 
+[![AI Ready](https://img.shields.io/badge/AI--Ready-yes-brightgreen?style=flat)](https://github.com/johnpapa/ai-ready)
+
 ![Cloak Icon](./resources/cloak-small.png 'Cloak')
 
 Cloak hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.
@@ -116,6 +118,26 @@ Inspiration comes in many forms. These folks and teams have contributed either t
 - The VS Code team and their incredibly [helpful guide for creating extensions](https://code.visualstudio.com/api/get-started/your-first-extension?wt.mc_id=cloak-github-jopapa)
 
 - Here are some great [examples for extensions](https://github.com/Microsoft/vscode-extension-samples) from the VS Code team
+
+## Contributing
+
+Want to contribute to Cloak? Here's how:
+
+1. Fork the repo and create a feature branch
+2. Install dependencies: `npm install`
+3. Make your changes
+4. Run linting: `npm run lint`
+5. Run tests: `npm test`
+6. Package the extension: `npm run package`
+7. Submit a PR
+
+See [AGENTS.md](AGENTS.md) for the full contributor guide, including how to add new commands and settings.
+
+**Using Copilot?** Try a prompt like:
+
+```
+Add a new command called "cloak.toggleComments" that toggles the hideComments setting
+```
 
 ## Contributors
 
