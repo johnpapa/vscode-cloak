@@ -1,17 +1,13 @@
 import * as path from 'path';
 import * as Mocha from 'mocha';
-import * as glob from 'glob';
+import { glob } from 'glob';
 import { createReport } from '../coverage';
 
-export function run(): Promise<void> {
-  // Create the mocha test
+export async function run(): Promise<void> {
   const mocha = new Mocha({
     ui: 'tdd',
-    //----------------------------------------
-    // Stuff from old test setup
-    timeout: 7500, // longer timeout, in case
-    useColors: true, // colored output from test results
-    //----------------------------------------
+    timeout: 7500,
+    color: true,
     reporter: 'mocha-multi-reporters',
     reporterOptions: {
       reporterEnabled: 'spec, xunit',
@@ -20,36 +16,27 @@ export function run(): Promise<void> {
       },
     },
   });
-  mocha.useColors(true);
 
   const testsRoot = path.resolve(__dirname, '..');
+  const files = await glob('**/**.test.js', { cwd: testsRoot });
 
-  return new Promise((c, e) => {
-    glob('**/**.test.js', { cwd: testsRoot }, (err: any, files: any) => {
-      if (err) {
-        return e(err);
-      }
+  files.forEach((f: string) => mocha.addFile(path.resolve(testsRoot, f)));
 
-      // Add files to the test suite
-      files.forEach((f: any) => mocha.addFile(path.resolve(testsRoot, f)));
-
-      try {
-        // Run the mocha test
-        mocha.run(failures => {
-          if (failures > 0) {
-            e(new Error(`${failures} tests failed.`));
-          } else {
-            c();
-          }
-        });
-      } catch (err) {
-        e(err);
-      }
-    });
-  }).then(() => {
-    // Tests have finished executing, check if we should generate a coverage report
+  return new Promise<void>((c, e) => {
+    try {
+      mocha.run((failures: number) => {
+        if (failures > 0) {
+          e(new Error(`${failures} tests failed.`));
+        } else {
+          c();
+        }
+      });
+    } catch (err) {
+      e(err);
+    }
+  }).then(async () => {
     if (process.env['GENERATE_COVERAGE']) {
-      createReport();
+      await createReport();
     }
   });
 }

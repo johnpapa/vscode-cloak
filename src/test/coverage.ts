@@ -17,7 +17,6 @@ export function instrument() {
     const file = files[i];
 
     if (/\.js\.map$/.test(file)) {
-      // console.log(`ignoring ${file}`);
       continue;
     }
 
@@ -25,20 +24,17 @@ export function instrument() {
     const outputPath = path.resolve(REPO_ROOT, 'out-cov', files[i]);
 
     if (!/\.js$/.test(file) || /(^|[\\/])test[\\/]/.test(file)) {
-      // console.log(`copying ${inputPath}`);
       copyFile(inputPath, outputPath);
       continue;
     }
 
-    // Try to find a .map file
     let map = null;
     try {
       map = JSON.parse(fs.readFileSync(`${inputPath}.map`).toString());
     } catch (err) {
-      // missing source map...
+      // missing source map
     }
 
-    // console.log(`instrumenting ${inputPath}...`);
     const instrumentedCode = instrumenter.instrumentSync(
       fs.readFileSync(inputPath).toString(),
       inputPath,
@@ -48,33 +44,32 @@ export function instrument() {
   }
 }
 
-export function createReport(): void {
+export async function createReport(): Promise<void> {
   const global = new Function('return this')();
 
   const mapStore = iLibSourceMaps.createSourceMapStore();
   const coverageMap = iLibCoverage.createCoverageMap(global.__coverage__);
-  const transformed = mapStore.transformCoverage(coverageMap);
+  const transformed = await mapStore.transformCoverage(coverageMap);
 
-  const watermarks = {
-    statements: [50, 80],
-    functions: [50, 80],
-    branches: [50, 80],
-    lines: [50, 80],
-  };
-
-  const tree = iLibReport.summarizers.flat(transformed.map);
   const context = iLibReport.createContext({
-    dir: path.resolve(REPO_ROOT, `coverage`),
-    watermarks,
+    dir: path.resolve(REPO_ROOT, 'coverage'),
+    coverageMap: transformed,
+    watermarks: {
+      statements: [50, 80],
+      functions: [50, 80],
+      branches: [50, 80],
+      lines: [50, 80],
+    } as any,
   });
 
+  const tree = context.getTree('flat');
   const reports = [
     iReports.create('json'),
     iReports.create('lcov'),
     iReports.create('html'),
     iReports.create('cobertura'),
   ];
-  reports.forEach(report => tree.visit(report, context));
+  reports.forEach(report => tree.visit(report as any, context));
 }
 
 function copyFile(inputPath: string, outputPath: string): void {
