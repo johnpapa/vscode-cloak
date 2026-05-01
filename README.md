@@ -2,6 +2,8 @@
 
 ![Cloak Icon](./resources/cloak-small.png 'Cloak')
 
+[![AI-Ready](https://img.shields.io/badge/AI--Ready-AGENTS.md-blue?logo=github-copilot)](./AGENTS.md)
+
 Cloak hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.
 
 Cloak can be useful if you:
