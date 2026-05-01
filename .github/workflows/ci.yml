@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'resources/**'
+      - 'LICENSE.md'
+      - '.gitignore'
+      - '.vscodeignore'
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+      - 'resources/**'
+      - 'LICENSE.md'
+      - '.gitignore'
+      - '.vscodeignore'
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Compile and bundle
+        run: npm run test-compile
+
+      - name: Run tests
+        run: xvfb-run -a npm run just-test
+
+      - name: Package extension
+        run: npx @vscode/vsce package --no-dependencies
