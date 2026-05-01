@@ -15,7 +15,7 @@ export async function updateGlobalConfiguration<T>(setting: Settings, value?: an
   return await config.update(section, value, ConfigurationTarget.Global);
 }
 
-export async function updateEditorTokenColorCustomization(colorCustomizations: {} | undefined) {
+export async function updateEditorTokenColorCustomization(colorCustomizations: object | undefined) {
   Logger.info(
     `${extensionShortName}: Updating the settings with the following editor token color customizations`,
   );
