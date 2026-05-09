@@ -131,7 +131,7 @@
     "mocha": "^10.8.0",
     "mocha-multi-reporters": "^1.5.1",
     "prettier": "^3.4.0",
-    "sinon": "^19.0.0",
+    "sinon": "^22.0.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.6.0",
     "webpack": "^5.97.0",
