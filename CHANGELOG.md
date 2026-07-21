@@ -2,7 +2,7 @@
 
 All notable changes to the "vscode-cloak" extension will be documented in this file.
 
-## Unreleased
+## 0.5.1 - 2026-07-21
 
 - Fixed a crash path when toggling secrets with unexpected TextMate rule entries.
 - Expanded default dotenv scopes so unquoted values are cloaked by default.
