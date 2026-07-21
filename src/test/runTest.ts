@@ -1,4 +1,5 @@
 import * as path from 'path';
+import * as os from 'os';
 
 import { runTests } from '@vscode/test-electron';
 
@@ -26,14 +27,23 @@ async function main() {
     }
 
     // Download VS Code, unzip it and run the integration test
+    const testWorkspacePath = extensionDevelopmentPath;
+    const testTempPath = path.join(os.tmpdir(), 'vscode-cloak-test');
+    const userDataDir = path.join(testTempPath, 'user-data');
+    const extensionsDir = path.join(testTempPath, 'extensions');
+
     await runTests({
       extensionDevelopmentPath,
       extensionTestsPath,
       launchArgs: [
-        './testworkspace',
-        '--disable-extensions'
-        // '${workspaceFolder}/testworkspace'
-      ]
+        testWorkspacePath,
+        '--user-data-dir',
+        userDataDir,
+        '--extensions-dir',
+        extensionsDir,
+        '--install-extension',
+        'mikestead.dotenv',
+      ],
     });
   } catch (err) {
     console.error('Failed to run tests');

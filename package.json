@@ -3,7 +3,7 @@
   "displayName": "Cloak",
   "description": "Cloak hides/shows your secrets in environment files, to avoid accidentally sharing them with everyone who sees your screen.",
   "publisher": "johnpapa",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
@@ -29,8 +29,7 @@
     "*"
   ],
   "extensionKind": [
-    "ui",
-    "workspace"
+    "ui"
   ],
   "main": "./dist/extension",
   "contributes": {
@@ -56,17 +55,17 @@
       "properties": {
         "cloak.hideComments": {
           "type": "boolean",
-          "default": false,
+          "default": true,
           "description": "Specifies whether comments will be affected"
         },
         "cloak.environmentKeys": {
           "type": "string",
-          "default": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
+          "default": "string.quoted.double.env,string.quoted.single.env,constant.numeric.env,variable.other.env,string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
           "description": "Specifies the scopes for the environment keys that will be affected"
         },
         "cloak.environmentComments": {
           "type": "string",
-          "default": "comment.line.number-sign.ini",
+          "default": "comment.line.number-sign.env,comment.line.number-sign.ini",
           "description": "Specifies the scopes for the environment file comments that will be affected"
         }
       }
@@ -137,8 +136,5 @@
     "webpack": "^5.97.0",
     "webpack-cli": "^5.1.4",
     "@vscode/test-electron": "^2.4.0"
-  },
-  "extensionDependencies": [
-    "mikestead.dotenv"
-  ]
+  }
 }

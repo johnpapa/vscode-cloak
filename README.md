@@ -14,15 +14,15 @@ Cloak can be useful if you:
 
 [![Open in VSCode.dev](https://img.shields.io/static/v1?label=Open%20In&message=VSCode.dev&labelColor=fff&color=444&logo=visualstudiocode&logoColor=blue)](https://vscode-dev.azurewebsites.net/)
 
-[![Badge for version for Visual Studio Code extension johnpapa.vscode-cloak](https://vsmarketplacebadge.apphb.com/version/johnpapa.vscode-cloak.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs-short/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
-[![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
-[![Rating](https://vsmarketplacebadge.apphb.com/rating/johnpapa.vscode-cloak.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
+[![Badge for version for Visual Studio Code extension johnpapa.vscode-cloak](https://vsmarketplacebadge.apphb.com/version/johnpapa.vscode-cloak.png?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs-short/johnpapa.vscode-cloak.png?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
+[![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/johnpapa.vscode-cloak.png?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating/johnpapa.vscode-cloak.png?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak&wt.mc_id=cloak-github-jopapa)
 
-[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
-[![All Contributors](https://img.shields.io/badge/all_contributors-15-blue.svg?style=flat-square)](#contributors)
+[![The MIT License](https://img.shields.io/badge/license-MIT-orange.png?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-blue.png?style=flat-square)](#contributors)
 
-[![Build Status](https://johnpapa.visualstudio.com/vscode-cloak/_apis/build/status/VS%20Code%Cloak%20Extension?branchName=master)](https://johnpapa.visualstudio.com/vscode-cloak/_build/latest?definitionId=3&branchName=master&WT.mc_id=vscodecloak-github-jopapa)
+[![Build Status](https://johnpapa.visualstudio.com/vscode-cloak/_apis/build/status/VS%20Code%Cloak%20Extension?branchName=main)](https://johnpapa.visualstudio.com/vscode-cloak/_build/latest?definitionId=3&branchName=main&WT.mc_id=vscodecloak-github-jopapa)
 
 ## Install
 
