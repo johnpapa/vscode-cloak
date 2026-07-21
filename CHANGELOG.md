@@ -8,6 +8,7 @@ All notable changes to the "vscode-cloak" extension will be documented in this f
 - Expanded default dotenv scopes so unquoted values are cloaked by default.
 - Expanded default comment scopes and enabled comment cloaking by default to reduce accidental exposure from commented secrets.
 - Removed obsolete extension dependency that could block activation in some environments.
+- Set extension kind to `ui` so cloak settings are applied from the local UI side in remote windows.
 
 ## 0.5.0
 

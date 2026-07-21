@@ -29,8 +29,7 @@
     "*"
   ],
   "extensionKind": [
-    "ui",
-    "workspace"
+    "ui"
   ],
   "main": "./dist/extension",
   "contributes": {
