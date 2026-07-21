@@ -52,7 +52,7 @@ vscode-cloak/
 - **Linter:** ESLint with `@typescript-eslint`
 - **Formatter:** Prettier
 - **Coverage:** Istanbul
-- **Extension dependency:** `mikestead.dotenv` (provides TextMate scopes for `.env` files)
+- **Scope source:** TextMate scopes provided by VS Code for dotenv/INI grammars
 
 ## Build & Run
 
@@ -129,4 +129,4 @@ This project does not have a docs site — documentation is in `README.md`. For 
 - **Tests require a VS Code instance** — you cannot run `mocha` directly. Tests must run through `vscode-test` which downloads and launches a real VS Code instance.
 - **Webpack must run before tests** — `npm test` handles this via `test-compile`, but if you run `just-test` alone, make sure you've already built.
 - **`package.json` and enums must stay in sync** — if you add a command to `package.json` but forget the `Commands` enum (or vice versa), the `basic.test.ts` test will catch it.
-- **`extensionDependencies`** — Cloak depends on `mikestead.dotenv` for TextMate scopes. Without it, `.env` file scopes won't exist and Cloak won't be able to hide values.
+- **Scope compatibility** — if a file type's grammar does not expose expected TextMate scopes, Cloak cannot hide those values. Inspect scopes with **Developer: Inspect Editor Tokens and Scopes**.

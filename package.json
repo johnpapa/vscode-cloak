@@ -137,8 +137,5 @@
     "webpack": "^5.97.0",
     "webpack-cli": "^5.1.4",
     "@vscode/test-electron": "^2.4.0"
-  },
-  "extensionDependencies": [
-    "mikestead.dotenv"
-  ]
+  }
 }

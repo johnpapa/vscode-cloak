@@ -1,4 +1,3 @@
-import * as vscode from 'vscode';
 import {
   updateEditorTokenColorCustomization,
   getColorCustomizationConfig,
@@ -10,6 +9,20 @@ import {
   getHideComments,
 } from './configuration';
 import { TextMateRulesNames, TextMateScopeDefaults } from './models';
+
+interface ITextMateRule {
+  name?: string;
+  scope?: string | string[];
+  settings?: Record<string, unknown>;
+}
+
+function hasRuleName(rule: unknown): rule is ITextMateRule & { name: string } {
+  return typeof rule === 'object' && rule !== null && typeof (rule as ITextMateRule).name === 'string';
+}
+
+function isCloakRuleName(name: string) {
+  return name === TextMateRulesNames.envKeys || name === TextMateRulesNames.envComments;
+}
 
 export async function restoreDefaultScopesHandler() {
   await updateEnvironmentKeys(TextMateScopeDefaults.envKeys);
@@ -29,10 +42,9 @@ function secretsAreHidden() {
   const config = getColorCustomizationConfig();
   const textMateRules = config.get('textMateRules');
   if (Array.isArray(textMateRules)) {
-    isHidingSecrets = !!textMateRules.find(el => {
-      const name: string = el.name;
-      return name.includes(TextMateRulesNames.envKeys);
-    });
+    isHidingSecrets = textMateRules.some(
+      rule => hasRuleName(rule) && rule.name === TextMateRulesNames.envKeys,
+    );
   }
   return isHidingSecrets;
 }
@@ -44,8 +56,8 @@ export async function hideSecretsHandler() {
   const hideComments = getHideComments();
 
   // remove existing rules for the cloak scopes
-  const newRules = existingRules.filter(el => {
-    return ![TextMateRulesNames.envKeys, TextMateRulesNames.envComments].includes(el.name);
+  const newRules = existingRules.filter(rule => {
+    return !(hasRuleName(rule) && isCloakRuleName(rule.name));
   });
 
   // add the envKeys scope
@@ -68,10 +80,8 @@ export async function hideSecretsHandler() {
     });
   }
 
-  const mergedTextMateRules: any = [...existingRules, ...newRules];
-
   const value = {
-    textMateRules: mergedTextMateRules,
+    textMateRules: newRules,
   };
 
   await updateEditorTokenColorCustomization(value);
@@ -82,8 +92,8 @@ export async function showSecretsHandler() {
   let newRules = [];
 
   if (Array.isArray(existingRules)) {
-    newRules = existingRules.filter(el => {
-      return ![TextMateRulesNames.envKeys, TextMateRulesNames.envComments].includes(el.name);
+    newRules = existingRules.filter(rule => {
+      return !(hasRuleName(rule) && isCloakRuleName(rule.name));
     });
   }
 
