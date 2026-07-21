@@ -22,6 +22,6 @@ export enum TextMateRulesNames {
 }
 
 export enum TextMateScopeDefaults {
-  envKeys = 'string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini',
-  envComments = 'comment.line.number-sign.ini',
+  envKeys = 'string.quoted.double.env,string.quoted.single.env,constant.numeric.env,variable.other.env,string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini',
+  envComments = 'comment.line.number-sign.env,comment.line.number-sign.ini',
 }

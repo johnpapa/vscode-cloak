@@ -2,6 +2,13 @@
 
 All notable changes to the "vscode-cloak" extension will be documented in this file.
 
+## Unreleased
+
+- Fixed a crash path when toggling secrets with unexpected TextMate rule entries.
+- Expanded default dotenv scopes so unquoted values are cloaked by default.
+- Expanded default comment scopes and enabled comment cloaking by default to reduce accidental exposure from commented secrets.
+- Removed obsolete extension dependency that could block activation in some environments.
+
 ## 0.5.0
 
 - Added new scope for ini files using single and double quotes.
